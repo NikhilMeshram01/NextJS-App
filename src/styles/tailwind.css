@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Background Colors */
+    --bg-primary: #000000;
+    --bg-overlay-light: #00000019;
+    --bg-overlay-medium: #00000033;
+    --bg-header: #151a2c;
+    --bg-success: #214938;
+    --bg-accent: #2e41a2;
+    --bg-info: #3e9bf1;
+    --bg-danger: #7d2147;
+    --bg-success-light: #a0fa8d99;
+    --bg-warning: #a97332;
+    --bg-info-light: #aacefd;
+    --bg-card-light: #bdd5f40c;
+    --bg-card-medium: #bdd5f433;
+    --bg-light: #dbeaff;
+    --bg-white: #ffffff;
+    --bg-white-light: #ffffff0c;
+    --bg-white-overlay: #ffffff19;
+    --bg-white-medium: #ffffff33;
+    --bg-white-transparent: #ffffff99;
+
+    /* Text Colors */
+    --text-primary: #141517;
+    --text-accent: #4380ff;
+    --text-success: #8fd797;
+    --text-success-light: #bdf4cf;
+    --text-warning-light: #ecf4bd;
+    --text-white: #ffffff;
+    --text-white-overlay: #ffffff19;
+    --text-white-transparent: #ffffff99;
+    --text-white-medium: #ffffffb2;
+    --text-white-light: #ffffffcc;
+
+    /* Button Colors */
+    --btn-primary: #4380ff;
+    --btn-secondary: #ffffffcc;
+  }
+}
+
+@layer utilities {
+
+  /* Hide scrollbar for all browsers */
+  .no-scrollbar {
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
+  }
+
+
+  /* Background Colors */
+  .bg-primary {
+    background-color: var(--bg-primary);
+  }
+
+  .bg-overlay-light {
+    background-color: var(--bg-overlay-light);
+  }
+
+  .bg-overlay-medium {
+    background-color: var(--bg-overlay-medium);
+  }
+
+  .bg-header {
+    background-color: var(--bg-header);
+  }
+
+  .bg-success {
+    background-color: var(--bg-success);
+  }
+
+  .bg-accent {
+    background-color: var(--bg-accent);
+  }
+
+  .bg-info {
+    background-color: var(--bg-info);
+  }
+
+  .bg-danger {
+    background-color: var(--bg-danger);
+  }
+
+  .bg-success-light {
+    background-color: var(--bg-success-light);
+  }
+
+  .bg-warning {
+    background-color: var(--bg-warning);
+  }
+
+  .bg-info-light {
+    background-color: var(--bg-info-light);
+  }
+
+  .bg-card-light {
+    background-color: var(--bg-card-light);
+  }
+
+  .bg-card-medium {
+    background-color: var(--bg-card-medium);
+  }
+
+  .bg-light {
+    background-color: var(--bg-light);
+  }
+
+  .bg-white {
+    background-color: var(--bg-white);
+  }
+
+  .bg-white-light {
+    background-color: var(--bg-white-light);
+  }
+
+  .bg-white-overlay {
+    background-color: var(--bg-white-overlay);
+  }
+
+  .bg-white-medium {
+    background-color: var(--bg-white-medium);
+  }
+
+  .bg-white-transparent {
+    background-color: var(--bg-white-transparent);
+  }
+
+  /* Text Colors */
+  .text-primary {
+    color: var(--text-primary);
+  }
+
+  .text-accent {
+    color: var(--text-accent);
+  }
+
+  .text-success {
+    color: var(--text-success);
+  }
+
+  .text-success-light {
+    color: var(--text-success-light);
+  }
+
+  .text-warning-light {
+    color: var(--text-warning-light);
+  }
+
+  .text-white {
+    color: var(--text-white);
+  }
+
+  .text-white-overlay {
+    color: var(--text-white-overlay);
+  }
+
+  .text-white-transparent {
+    color: var(--text-white-transparent);
+  }
+
+  .text-white-medium {
+    color: var(--text-white-medium);
+  }
+
+  .text-white-light {
+    color: var(--text-white-light);
+  }
+
+  /* Button Colors */
+  .bg-btn-primary {
+    background-color: var(--btn-primary);
+  }
+
+  .bg-btn-secondary {
+    background-color: var(--btn-secondary);
+  }
+
+  .bg-image-selected {
+    background-image: linear-gradient(to right, #11deff, #4380ff);
+  }
+}
