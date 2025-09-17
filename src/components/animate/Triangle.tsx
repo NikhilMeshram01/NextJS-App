@@ -15,7 +15,7 @@ const Triangle = () => {
 
         // Set initial position explicitly
         gsap.set(triangleRef.current, {
-            left: -390,
+            left: -290,
             top: 438,
             x: 0, // Match CSS transform: translate(-50%, -50%)
             y: 0,
