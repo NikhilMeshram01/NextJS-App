@@ -30,7 +30,7 @@ function BlurMainBall() {
                 start: "top 80%", // Start immediately when scrolling begins
                 end: "bottom bottom", // End at the bottom of the page
                 scrub: 0.3, // Slight delay for smoother, slower feel (adjustable)
-                markers: true, // Keep for debugging
+                // markers: true, // Keep for debugging
             },
         });
 

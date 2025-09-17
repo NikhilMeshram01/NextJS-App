@@ -31,7 +31,7 @@ const Triangle = () => {
                 start: "top top", // Start immediately when scrolling begins
                 end: "bottom bottom", // End at the bottom of the page
                 scrub: 1, // Slight delay for smoother, slower feel (adjustable)
-                markers: true, // Keep for debugging
+                // markers: true, // Keep for debugging
             },
         });
 
