@@ -38,7 +38,7 @@ function BlurMainBall() {
         tl
             .to(blurBallRef.current, {
                 left: 900,
-                top: -200,
+                top: -2000,
                 x: 0,
                 y: 0,
                 scale: 1.4,

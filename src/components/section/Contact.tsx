@@ -23,14 +23,6 @@ function Contact() {
     return (
         <section className="relative w-full py-16 sm:py-20 md:py-24 style={{ height: '200vh' }}">
             {/* Contact Section */}
-            {/* Background Elements */}
-            {/* <div className="absolute bottom-0 left-0 w-[400px] sm:w-[500px] md:w-[570px] h-[400px] sm:h-[500px] md:h-[570px] rounded-full">
-            <img
-              src="/images/img_gradient.png"
-              alt="Gradient Background"
-              className="w-full h-full object-contain opacity-60"
-            />
-          </div> */}
             <div className="relative w-full max-w-[1280px] mx-auto  pt-[-100px]">
                 <div className=" bg-info-light rounded-[80px] overflow-hidden">
                     <div className=" rounded-[80px] pr-12">
@@ -105,14 +97,7 @@ function Contact() {
                                 </div>
                             </div>
                             {/* Right Column - Contact Form */}
-                            {/* <div ref={msgParallax.ref} className='absolute right-10 top-[-130px]'>
-                                <Image
-                                    width={223}
-                                    height={223}
-                                    src={"/images/line-md_email.png"}
-                                    alt='Message Icon'
-                                />
-                            </div> */}
+
                             {
                                 !isAnimationDone && (
                                     <div ref={msgParallax.ref} className="absolute right-10 top-[-130px] z-10">
