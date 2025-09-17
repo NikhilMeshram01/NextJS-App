@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/index.css';
+import { Providers } from './providers';
 
 export const viewport = {
   width: 'device-width',
@@ -24,7 +25,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fnikhilsa9101back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+      <body>
+        <Providers>
+          {children}
+          <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fnikhilsa9101back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+        </Providers>
       </body>
     </html>
   );

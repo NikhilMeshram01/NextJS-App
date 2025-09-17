@@ -1,5 +1,6 @@
 import React from 'react'
 import MainBall from '../animate/MainBall'
+import Image from 'next/image';
 
 interface StatisticProps {
     value: string;
@@ -24,41 +25,15 @@ function Hero() {
         { value: "10K+", label: "Active Users" }
     ];
     return (
-        <section className="relative w-full">
-            {/* Hero Section */}
-            {/* Background Image */}
-            <div
-                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-                style={{ backgroundImage: "url('/images/img_group_20468.png')" }}
+        <section className="relative w-full ">
+            <Image
+                width={450}
+                height={969}
+                src="/images/image 16.png"
+                alt="Hero_Image_2"
+                className="absolute top-[150px] sm:top-[200px] md:top-[200px] left-1/2 transform -translate-x-1/2 w-[300px] sm:w-[500px] md:w-[969px] h-[250px] sm:h-[350px] md:h-[450px] object-contain bg-[#151a2c] blur-md opacity-40 bg-blend-hard-light"
             />
-            {/* Hero Images */}
-            <div className="absolute inset-0 pointer-events-none">
-                {/* <img
-              src="/images/Triangle.png"
-              alt="Hero_Image_1"
-              className="absolute top-[100px] sm:top-[138px] left-[-390px] w-[150px] sm:w-[200px] md:w-[669px] h-[300px] sm:h-[500px] md:h-[669px] bg-transparent blur-md object-cover opacity-80"
-            /> */}
-                {/* <img
-              src="/images/image 16.png"
-              alt="Hero_Image_2"
-              className="absolute top-[150px] sm:top-[200px] md:top-[268px] left-1/2 transform -translate-x-1/2 w-[300px] sm:w-[500px] md:w-[279px] h-[250px] sm:h-[350px] md:h-[669px] object-contain opacity-90 bg-red-400"
-            /> */}
-                {/* <img
-              src="/images/img_image_8.png"
-              alt="Hero_Image_3"
-              className="absolute top-[80px] sm:top-[98px] right-0 w-[150px] sm:w-[250px] md:w-[350px] h-[150px] sm:h-[250px] md:h-[350px] object-contain opacity-80"
-            /> */}
-                <MainBall
-                    itemWidth={350}
-                    itemHeight={350}
-                    startTop='80px'
-                    startLeft='1100px'
-                    endTop="894px"
-                    endLeft="349px"
-                    itemRotate={0}
-                />
-
-            </div>
+            {/* </div> */}
             <div className="relative w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24 lg:py-32">
                 <div className="flex flex-col gap-8 sm:gap-12 md:gap-8 items-center text-center">
                     {/* AI Badge */}

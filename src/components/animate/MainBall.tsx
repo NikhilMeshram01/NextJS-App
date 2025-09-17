@@ -1,154 +1,115 @@
-'use client';
+// app/components/MainBall.jsx
+"use client";
 
-import React, { useEffect, useRef } from 'react';
-import Image from 'next/image';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useEffect, useRef } from "react";
+import Image from "next/image";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
-
-type Props = {
-    itemWidth: number;
-    itemHeight: number;
-    startTop: string;
-    startLeft: string;
-    endTop: string;
-    endLeft: string;
-    itemRotate: number;
-};
-
-const MainBall = ({
-    itemWidth,
-    itemHeight,
-    startTop,
-    startLeft,
-    endTop,
-    endLeft,
-    itemRotate,
-}: Props) => {
-    const ballRef = useRef<HTMLDivElement>(null);
+function MainBall() {
+    const ballRef = useRef(null);
 
     useEffect(() => {
-        const ball = ballRef.current;
+        // Register ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
 
-        if (!ball) return;
+        // Set initial position explicitly
+        gsap.set(ballRef.current, {
+            left: 1400,
+            top: 300,
+            x: 0, // Match CSS transform: translate(-50%, -50%)
+            y: 0,
+            scale: 1,
+            rotate: 0,
+        });
 
-        // Convert string values to numbers
-        const startTopNum = parseFloat(startTop);
-        const startLeftNum = parseFloat(startLeft);
-        const endTopNum = parseFloat(endTop);
-        const endLeftNum = parseFloat(endLeft);
-
-        const deltaX = endLeftNum - startLeftNum;
-        const deltaY = endTopNum - startTopNum;
-
-        console.log('deltaX', deltaX)
-        console.log('deltaY', deltaY)
-
-        gsap.to(ball, {
-            x: deltaX,
-            y: deltaY,
-            rotation: itemRotate,
-            ease: 'none',
+        // Create a timeline for the ball animation
+        const tl = gsap.timeline({
             scrollTrigger: {
-                trigger: ball,
-                start: 'top center',
-                end: 'bottom top',
-                scrub: true,
-                // markers: true,
+                trigger: "body",
+                start: "top top", // Start immediately when scrolling begins
+                end: "bottom bottom", // End at the bottom of the page
+                scrub: 1, // Slight delay for smoother, slower feel (adjustable)
+                markers: true, // Keep for debugging
             },
         });
-    }, [startTop, startLeft, endTop, endLeft, itemRotate]);
+
+        // Animation sequence
+        tl
+            // Move to Hero Section: Center
+            .to(ballRef.current, {
+                left: 1100,
+                top: 350,
+                x: 0,
+                y: 0,
+                scale: 1,
+                rotate: 0,
+                duration: 1.5,
+                ease: "power1.inOut",
+            }).to(ballRef.current, {
+                left: 1200,
+                top: 350,
+                x: 0,
+                y: 0,
+                scale: 1.8,
+                rotate: 0,
+                duration: 0.4,
+                ease: "power1.in",
+            }).to(ballRef.current, {
+                left: 1300,
+                top: -10,
+                x: 0,
+                y: 0,
+                opacity: 0.4,
+                scale: 1,
+                rotate: 0,
+                duration: 1,
+                ease: "power1.in",
+            })
+            .to(ballRef.current, {
+                left: 1100,
+                top: 300,
+                x: 0,
+                y: 0,
+                opacity: 0.2,
+                scale: 1.6,
+                rotate: 0,
+                duration: 1,
+                ease: "power1.in",
+            })
+            .to(ballRef.current, {
+                left: 1100,
+                top: 300,
+                x: 0,
+                y: 0,
+                opacity: 0,
+                scale: 1.6,
+                rotate: 0,
+                duration: 0.5,
+                ease: "power1.in",
+            })
+
+        // Cleanup ScrollTrigger on component unmount
+        return () => {
+            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+        };
+    }, []);
 
     return (
-        <div
+        <Image
             ref={ballRef}
+            src="/images/img_image_8.png"
+            alt="Ball"
+            width={350}
+            height={350}
             style={{
-                width: itemWidth,
-                height: itemHeight,
-                position: 'absolute',
-                top: startTop,
-                left: startLeft,
+                position: "fixed",
+                left: "1400px",
+                top: "300px",
+                transform: "translate(-50%, -50%)",
             }}
-        >
-            <Image
-                src="/images/img_image_8.png"
-                alt="ball"
-                layout="fill"
-                objectFit="contain"
-                className="opacity-80"
-            />
-        </div>
+        />
     );
-};
+}
 
 export default MainBall;
-
-
-// 'use client'; // for Next.js App Router (if using it)
-
-// import React, { useEffect, useRef } from 'react';
-// import Image from 'next/image';
-// import { gsap } from 'gsap';
-// import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-// gsap.registerPlugin(ScrollTrigger);
-
-// type Proptype = {
-//     itemWidth: number,
-//     itemHeight: number,
-//     startTop: string,
-//     startLeft: string,
-//     endTop: string,
-//     endLeft: string,
-//     itemRotate: number
-// }
-
-// const MainBall = (props: Proptype) => {
-
-//     const { itemWidth, itemHeight, startTop, startLeft, endTop, endLeft, itemRotate } = props
-
-//     const ballRef = useRef(null);
-
-//     useEffect(() => {
-//         const ball = ballRef.current;
-//         gsap.to(ball, {
-//             x: endLeft, // Move 500px to the right
-//             y: endTop,
-//             rotation: itemRotate, // Rotate full circle
-//             ease: "none",
-//             scrollTrigger: {
-//                 trigger: ball,
-//                 start: "top center", // Start when the ball hits the center of the viewport
-//                 end: "bottom top", // End when it leaves the top
-//                 scrub: true, // Makes animation tied to scroll
-//                 // markers: true, // Uncomment for debugging
-//             },
-//         });
-//     }, []);
-
-//     return (
-//         <div style={{ height: '200vh' }}> {/* Make page scrollable */}
-//             <div
-//                 ref={ballRef}
-//                 style={{
-//                     width: itemWidth,
-//                     height: itemHeight,
-//                     position: 'absolute',
-//                     top: startTop,
-//                     left: startLeft
-//                 }}
-//             >
-//                 <Image
-//                     src="/images/img_image_8.png"
-//                     alt="ball"
-//                     layout="fill"
-//                     objectFit="cover"
-//                     className="absolute top-[80px] sm:top-[98px] right-0 w-[150px] sm:w-[250px] md:w-[350px] h-[150px] sm:h-[250px] md:h-[350px] object-contain opacity-80"
-//                 />
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default MainBall;

@@ -1,4 +1,5 @@
 import React from 'react'
+import BlurMainBall from '../animate/BlurMainBall';
 
 interface ServiceCardProps {
     title: string;
@@ -89,6 +90,7 @@ function Product() {
     return (
         <section className="relative w-full py-16 sm:py-20 md:py-24">
             {/* Product Engineering Section */}
+            <BlurMainBall />
             {/* Background Elements */}
             {/* <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-[300px] sm:w-[400px] md:w-[444px] h-[300px] sm:h-[400px] md:h-[444px] rounded-full bg-gradient-to-b from-[#085cff] to-transparent opacity-30 blur-3xl"></div>
           <div className="absolute top-1/2 right-0 w-[400px] sm:w-[500px] md:w-[638px] h-[400px] sm:h-[500px] md:h-[638px]">

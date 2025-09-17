@@ -41,7 +41,10 @@ module.exports = {
           primary: "var(--btn-primary)",
           secondary: "var(--btn-secondary)"
         }
-      }
+      },
+      blur: {
+        'custom': '12px', // Custom blur value
+      },
     }
   },
   plugins: []

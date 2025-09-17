@@ -7,7 +7,7 @@ interface BlogPostProps {
 }
 
 const BlogPostCard: React.FC<BlogPostProps> = ({ title, description, image }) => (
-    <div className="bg-overlay-medium rounded-[20px] p-4 sm:p-5 w-full max-w-[412px] mx-auto">
+    <div className="bg-[#111627] bg-transparent rounded-[20px] p-4 sm:p-5 w-full max-w-[412px] mx-auto">
         <div className="flex flex-col gap-3 sm:gap-4">
             {/* Image */}
             <div className="w-full h-[150px] sm:h-[212px] rounded-lg overflow-hidden">
@@ -47,7 +47,7 @@ function FeaturedInsights() {
         }
     ];
     return (
-        <section className="relative w-full py-16 sm:py-20 md:py-24">
+        <section className="relative w-full py-16 sm:py-20 md:py-24 ">
             {/* Featured Insights Section */}
             {/* Background Decoration */}
             {/* <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[250px] sm:w-[300px] md:w-[350px] h-[250px] sm:h-[300px] md:h-[350px]">

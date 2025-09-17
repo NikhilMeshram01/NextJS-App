@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import Glob from '../animate/Glob';
 
 interface TechnologyButtonProps {
     name: string;
@@ -51,30 +52,24 @@ function Technologies() {
         { name: "Google Cloud", icon: "/images/img_frame_blue_a200_01.svg" },
         { name: "Ola Krutrim", icon: "/images/img_frame_gray_900_03.svg" }
     ];
+
     return (
         <section className="relative w-full py-16 sm:py-20 md:py-24">
             {/* Technologies Section */}
-            {/* Background Elements */}
-            {/* <div className="absolute top-0 left-0 w-[200px] sm:w-[300px] md:w-[364px] h-[400px] sm:h-[500px] md:h-[650px]">
-            <img
-              src="/images/img_69.png"
-              alt="Background Element"
-              className="w-full h-full object-contain opacity-40"
-            />
-          </div>
-          <div className="absolute top-1/2 right-0 w-[400px] sm:w-[500px] md:w-[638px] h-[400px] sm:h-[500px] md:h-[638px] -mt-32">
-            <img
-              src="/images/img_image_7.png"
-              alt="Background Decoration"
-              className="w-full h-full object-contain opacity-30"
-            />
-          </div> */}
+            <Glob />
 
+            {/* <div className="absolute top-1/2 right-0 w-[400px] sm:w-[500px] md:w-[638px] h-[400px] sm:h-[500px] md:h-[638px] -mt-32">
+                <img
+                    src="/images/img_image_7.png"
+                    alt="Background Decoration"
+                    className="w-full h-full object-contain opacity-30"
+                />
+            </div> */}
 
             <div className="relative w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16">
                     {/* Left Column - Innovation Card */}
-                    <div className="flex flex-col justify-center w-[488px] h-[979px] ">
+                    <div className="flex flex-col justify-center w-[488px] h-[979px]">
                         <div className="bg-gradient-to-b from-[#282e6c33] to-[#bdd5f433] rounded-[80px] p-8 sm:p-12 md:p-10 shadow-lg">
                             <div className="flex flex-col gap-6 sm:gap-8 items-center py-20">
                                 <h2 className="text-[28px] sm:text-[32px] md:text-[40px] font-semibold text-white uppercase leading-tight">
@@ -86,7 +81,7 @@ function Technologies() {
                                 </p>
                                 <div className="w-full max-w-[300px] sm:max-w-[376px] h-[250px] sm:h-[300px] md:h-[376px]">
                                     <img
-                                        src="/images/img_image_12.png"
+                                        src="/images/image 121.png"
                                         alt="Innovation Illustration"
                                         className="w-full h-full object-contain"
                                     />
