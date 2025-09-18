@@ -98,32 +98,32 @@ function Contact() {
                             </div>
                             {/* Right Column - Contact Form */}
 
-                            {
-                                !isAnimationDone && (
-                                    <div ref={msgParallax.ref} className="absolute right-10 top-[-130px] z-10">
-                                        <Image
-                                            width={223}
-                                            height={223}
-                                            src="/images/line-md_email.png"
-                                            alt="Message Icon"
-                                        />
-                                    </div>
-                                )
-                            }
+                            {/* {
+                                !isAnimationDone && ( */}
+                            <div ref={msgParallax.ref} className="absolute right-10 top-[-130px] z-10">
+                                <Image
+                                    width={223}
+                                    height={223}
+                                    src="/images/line-md_email.png"
+                                    alt="Message Icon"
+                                />
+                            </div>
+                            {/* )
+                            } */}
                             <div className='absolute right-[74px] w-[450px] overflow-hidden'>
                                 <div className='relative w-full h-full'>
                                     <div className='relative w-full h-full'>
                                         <div className='absolute right-[-60px] top-[-90px] z-20'>
-                                            {
-                                                isAnimationDone && (
-                                                    <Image
-                                                        width={200}
-                                                        height={200}
-                                                        src={"/images/line-md_email.png"}
-                                                        alt='Message Icon'
-                                                    />
-                                                )
-                                            }
+                                            {/* {
+                                                isAnimationDone && ( */}
+                                            <Image
+                                                width={200}
+                                                height={200}
+                                                src={"/images/line-md_email.png"}
+                                                alt='Message Icon'
+                                            />
+                                            {/* )
+                                            } */}
                                         </div>
 
                                     </div>

@@ -20,14 +20,13 @@ const Glob = () => {
             scale: 1.4,
             rotate: 0,
             opacity: 0.8,
-            duration: 1
         });
 
         // Create a timeline for the ball animation
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: globRef.current,
-                start: "top 20%",
+                start: "top 40%",
                 end: "bottom bottom",
                 scrub: 1,
                 // markers: true,
@@ -44,30 +43,30 @@ const Glob = () => {
                 y: 0,
                 scale: 2,
                 rotate: -90,
-                duration: 1,
+                duration: 2,
                 opacity: 0.6,
-                ease: "power1.inOut",
+                ease: "power1.in",
             })
             .to(globRef.current, {
-                top: 500,
+                top: 700,
                 left: -100,
                 x: 0,
                 y: 0,
                 scale: 3,
                 rotate: -90,
-                duration: 1,
+                duration: 2,
                 opacity: 1,
-                ease: "power1.inOut",
+                ease: "power1.in",
             }).to(globRef.current, {
-                top: 800,
-                left: -300,
+                top: 1200,
+                left: -400,
                 x: 0,
                 y: 0,
                 scale: 3,
                 rotate: -90,
                 duration: 1,
                 opacity: 1,
-                ease: "power1.inOut",
+                ease: "power1.in",
             })
 
         // Cleanup ScrollTrigger on component unmount
