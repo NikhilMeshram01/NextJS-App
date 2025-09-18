@@ -97,41 +97,41 @@ function Testimonials() {
         }
     ];
     return (
-        <section className="w-full py-16 sm:py-20 md:py-24">
+        <section className="w-full py-12 sm:py-16 md:py-24">
             {/* Client Testimonials Section */}
-            <div className="w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex flex-col gap-8 sm:gap-12 md:gap-16">
+            <div className="w-full max-w-[1280px] mx-auto px-3 sm:px-6 lg:px-8">
+                <div className="flex flex-col gap-6 sm:gap-12 md:gap-16">
                     {/* Section Header */}
-                    <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-6">
-                        <div className="flex flex-col gap-3 sm:gap-4">
-                            <h2 className="text-[28px] sm:text-[32px] md:text-[40px] font-semibold text-white uppercase leading-tight">
+                    <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-6">
+                        <div className="flex flex-col gap-2 sm:gap-4">
+                            <h2 className="text-[22px] sm:text-[28px] md:text-[40px] font-semibold text-white uppercase leading-snug">
                                 Our Happy Clients
                             </h2>
-                            <p className="text-[14px] sm:text-[16px] font-normal text-white-light leading-relaxed">
+                            <p className="text-[13px] sm:text-[15px] md:text-[16px] font-normal text-white-light leading-relaxed max-w-[90%] sm:max-w-none">
                                 Dummy ipsum dolor sit amet, consectetur adipiscing elit
                             </p>
                         </div>
                         {/* Navigation Buttons */}
                         <div className="flex items-center gap-2 sm:gap-4">
-                            <button className="w-8 h-8 sm:w-10 sm:h-10 bg-white-medium rounded-full flex items-center justify-center hover:bg-white-overlay transition-colors">
+                            <button className="w-7 h-7 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-white-medium rounded-full flex items-center justify-center hover:bg-white-overlay transition-colors">
                                 <img
                                     src="/images/img_size_large_color_default.svg"
                                     alt="Previous"
-                                    className="w-4 h-4 sm:w-5 sm:h-5"
+                                    className="w-3.5 h-3.5 sm:w-5 sm:h-5"
                                 />
                             </button>
-                            <button className="w-8 h-8 sm:w-10 sm:h-10 bg-white-medium rounded-full flex items-center justify-center hover:bg-white-overlay transition-colors">
+                            <button className="w-7 h-7 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-white-medium rounded-full flex items-center justify-center hover:bg-white-overlay transition-colors">
                                 <img
                                     src="/images/img_size_large_color_default_white_a700.svg"
                                     alt="Next"
-                                    className="w-4 h-4 sm:w-5 sm:h-5"
+                                    className="w-3.5 h-3.5 sm:w-5 sm:h-5"
                                 />
                             </button>
                         </div>
                     </div>
                     {/* Testimonials Slider */}
-                    <div className="overflow-x-auto overflow-y-hidden no-scrollbar">
-                        <div className="flex gap-4 sm:gap-6 md:gap-8 min-w-max pb-4">
+                    <div className="overflow-x-auto overflow-y-hidden no-scrollbar -mx-3 sm:mx-0">
+                        <div className="flex gap-3 sm:gap-6 md:gap-8 min-w-max pb-4 px-3 sm:px-0">
                             {testimonials.map((testimonial, index) => (
                                 <TestimonialCard key={index} {...testimonial} />
                             ))}
@@ -139,15 +139,8 @@ function Testimonials() {
                     </div>
                 </div>
             </div>
-            {/* Background Decoration */}
-            {/* <div className="absolute top-1/2 right-0 w-[250px] sm:w-[300px] md:w-[350px] h-[250px] sm:h-[300px] md:h-[350px] -mt-16">
-            <img
-              src="/images/img_image_7.png"
-              alt="Background Decoration"
-              className="w-full h-full object-contain opacity-30"
-            />
-          </div> */}
         </section>
+
     )
 }
 
