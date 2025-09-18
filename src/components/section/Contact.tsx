@@ -1,9 +1,11 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import Button from '../ui/Button'
 import { useParallax } from 'react-scroll-parallax'
 import Image from 'next/image';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 function Contact() {
 
@@ -13,12 +15,101 @@ function Contact() {
         speed: 1
     });
 
-    const [isAnimationDone, setIsAnimationDone] = React.useState(false);
-    const msgParallax = useParallax<HTMLDivElement>({
-        easing: 'easeOutQuad',
-        translateX: [0, 25, 'easeInOut'],
-        translateY: [0, 50, 'easeInOut'],
-    })
+    const msgRef = useRef(null)
+    useEffect(() => {
+        // Register ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Set initial position explicitly
+        gsap.set(msgRef.current, {
+            top: -130,
+            right: 40,
+            scale: 1,
+            opacity: 1,
+            duration: 2
+        });
+
+        // Create a timeline for the ball animation
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: msgRef.current,
+                start: "top 10%",
+                end: "bottom bottom",
+                scrub: 1,
+                // markers: true,
+            },
+        });
+
+        // Animation sequence
+        tl
+            // Move to Hero Section: Center
+            .to(msgRef.current, {
+                top: -60,
+                right: 30,
+                scale: 0.9,
+                duration: 2,
+                opacity: 1,
+                ease: "power1.inOut",
+            })
+            .to(msgRef.current, {
+                top: -20,
+                right: 20,
+                scale: 0.7,
+                duration: 2,
+                opacity: 1,
+                ease: "power1.inOut",
+            })
+            .to(msgRef.current, {
+                top: -20,
+                right: 20,
+                scale: 0.7,
+                duration: 2,
+                opacity: 0,
+                ease: "power1.inOut",
+            })
+
+        // Cleanup ScrollTrigger on component unmount
+        return () => {
+            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+        };
+    }, []);
+
+    const msg2Ref = useRef(null)
+    useEffect(() => {
+        // Register ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Set initial position explicitly
+        gsap.set(msg2Ref.current, {
+            top: -90,
+            right: -60,
+            opacity: 0,
+            duration: 2
+        });
+
+        // Create a timeline for the ball animation
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: msg2Ref.current,
+                start: "top 10%",
+                end: "bottom bottom",
+                scrub: 1,
+                // markers: true,
+            },
+        });
+
+        tl.to(msg2Ref.current, {
+            top: -90,
+            right: -60,
+            opacity: 1,
+            duration: 2,
+            ease: "power1.inOut",
+        })
+        // Cleanup ScrollTrigger on component unmount
+        return () => {
+            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+        };
+    }, []);
 
     return (
         <section className="relative w-full py-16 sm:py-20 md:py-24 style={{ height: '200vh' }}">
@@ -98,9 +189,8 @@ function Contact() {
                             </div>
                             {/* Right Column - Contact Form */}
 
-                            {/* {
-                                !isAnimationDone && ( */}
-                            <div ref={msgParallax.ref} className="absolute right-10 top-[-130px] z-10">
+
+                            <div ref={msgRef} className="absolute right-10 top-[-130px] z-10">
                                 <Image
                                     width={223}
                                     height={223}
@@ -108,22 +198,16 @@ function Contact() {
                                     alt="Message Icon"
                                 />
                             </div>
-                            {/* )
-                            } */}
                             <div className='absolute right-[74px] w-[450px] overflow-hidden'>
                                 <div className='relative w-full h-full'>
                                     <div className='relative w-full h-full'>
-                                        <div className='absolute right-[-60px] top-[-90px] z-20'>
-                                            {/* {
-                                                isAnimationDone && ( */}
+                                        <div ref={msg2Ref} className='absolute opacity-0 right-[-60px] top-[-90px] z-20'>
                                             <Image
                                                 width={200}
                                                 height={200}
                                                 src={"/images/line-md_email.png"}
                                                 alt='Message Icon'
                                             />
-                                            {/* )
-                                            } */}
                                         </div>
 
                                     </div>
