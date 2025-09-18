@@ -15,7 +15,7 @@ function MainBall() {
 
         // Set initial position explicitly
         gsap.set(ballRef.current, {
-            left: 1400,
+            left: 1350,
             top: 300,
             x: 0, // Match CSS transform: translate(-50%, -50%)
             y: 0,
@@ -26,7 +26,7 @@ function MainBall() {
         // Create a timeline for the ball animation
         const tl = gsap.timeline({
             scrollTrigger: {
-                trigger: "body",
+                trigger: 'body',
                 start: "top top", // Start immediately when scrolling begins
                 end: "bottom bottom", // End at the bottom of the page
                 scrub: 1, // Slight delay for smoother, slower feel (adjustable)
@@ -46,6 +46,15 @@ function MainBall() {
                 rotate: 0,
                 duration: 1.5,
                 ease: "power1.inOut",
+            }).to(ballRef.current, {
+                left: 1150,
+                top: 350,
+                x: 0,
+                y: 0,
+                scale: 1.5,
+                rotate: 0,
+                duration: 0.4,
+                ease: "power1.in",
             }).to(ballRef.current, {
                 left: 1200,
                 top: 350,
@@ -104,7 +113,7 @@ function MainBall() {
             height={350}
             style={{
                 position: "fixed",
-                left: "1400px",
+                left: "1350px",
                 top: "300px",
                 transform: "translate(-50%, -50%)",
             }}
