@@ -82,7 +82,7 @@ const Glob = () => {
             height={650}
             src="/images/Glob.png"
             alt="Background Element"
-            className="w-[364px] h-[650px] object-contain opacity-40 "
+            className="hidden sm:block w-[364px] h-[650px] object-contain opacity-40 "
             style={{
                 position: "absolute",
                 top: "200px",

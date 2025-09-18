@@ -61,6 +61,7 @@ function BlurMainBall() {
             alt="Ball"
             width={350}
             height={350}
+            className="hidden sm:block"
             style={{
                 position: "absolute",
                 left: "1050px",

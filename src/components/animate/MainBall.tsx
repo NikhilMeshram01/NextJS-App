@@ -117,6 +117,7 @@ function MainBall() {
                 top: "300px",
                 transform: "translate(-50%, -50%)",
             }}
+        // className="hidden sm:block"
         />
     );
 }

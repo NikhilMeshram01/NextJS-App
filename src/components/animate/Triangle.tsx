@@ -103,7 +103,7 @@ const Triangle = () => {
             alt="Triangle"
             width={669}
             height={669}
-            className="opacity-80 bg-[#151a2c] blur-custom bg-blend-hard-light"
+            className="hidden sm:block opacity-80 bg-[#151a2c] blur-custom bg-blend-hard-light"
             style={{
                 position: "fixed",
                 left: "-390px",
